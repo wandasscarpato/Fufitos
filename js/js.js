@@ -47,23 +47,23 @@ function enviarDatos() {
   Datos();
 }
 function Datos(){
-  document.getElementById("datos-servicio").innerHTML = `Servicio requerido: ${eleccionDelCliente.nombreServicio}`;
-  document.getElementById("datos-nivel").innerHTML = `Nivel del servicio: ${eleccionDelCliente.nombreNivel}`;
+  document.querySelector("#datos-servicio").innerHTML = `Servicio requerido: ${eleccionDelCliente.nombreServicio}`;
+  document.querySelector("#datos-nivel").innerHTML = `Nivel del servicio: ${eleccionDelCliente.nombreNivel}`;
 }
 function titulo() {
-  document.getElementById("titulo").innerHTML = "Datos seleccionados";
+  document.querySelector("#titulo").innerHTML = "Datos seleccionados";
 }
 //modifico el color de los bloques
 function mostrarOcultos(){
-  document.getElementById("bloque2").style.backgroundColor ="rgba(113, 230, 230, 0.479)";
-  document.getElementById("bloquePresupuesto").style.backgroundColor="rgba(113, 230, 230, 0.479)";
-  document.getElementById("bloque3").style.backgroundColor ="rgba(113, 230, 230, 0.479)";
+  document.querySelector("#bloque2").style.backgroundColor ="rgba(113, 230, 230, 0.479)";
+  document.querySelector("#bloquePresupuesto").style.backgroundColor="rgba(113, 230, 230, 0.479)";
+  document.querySelector("#bloque3").style.backgroundColor ="rgba(113, 230, 230, 0.479)";
 }
 //extraigo la cant de invitados
 function cantidadInvitados() {
-  let cantidades = Number(document.getElementById("cantidadInvitados").value);
-  document.getElementById(
-    "datos-cantidad"
+  let cantidades = Number(document.querySelector("#cantidadInvitados").value);
+  document.querySelector(
+    "#datos-cantidad"
   ).innerHTML = `Cantidad de invitados: ${cantidades} personas`;
   return cantidades;
 }
@@ -89,44 +89,41 @@ function valorNivel() {
 }
 
 function mostrarTitulos() {
-  document.getElementById("descripcion-tabla").innerHTML = "Descripcion";
-  document.getElementById("precio-invitado-tabla").innerHTML =
+  document.querySelector("#descripcion-tabla").innerHTML = "Descripcion";
+  document.querySelector("#precio-invitado-tabla").innerHTML =
     "Por invitado";
-  document.getElementById("precio-final-tabla").innerHTML = "Precio final";
+  document.querySelector("#precio-final-tabla").innerHTML = "Precio final";
 }
 
 function mostrarTituloPresupuesto() {
-  document.getElementById("presupuesto-titulo").innerHTML = "Presupuesto";
+  document.querySelector("#presupuesto-titulo").innerHTML = "Presupuesto";
 }
 
 function switchServicios() {
+  let presupuestoDescipcion=document.querySelector("#presupuesto-descripcion1");
+  let presupuestoPrecio=document.querySelector("#presupuesto-precio");
+  let presupuestoPrecio2=document.querySelector("#presupuesto-precio2")
   switch (vServicio) {
     case 0:
       precioUnitario = 300;
       precioFinal = precioUnitario * cantidades;
-      document.getElementById(
-        "presupuesto-descripcion1"
-      ).innerHTML = `Valor del servicio "mesa dulce"`;
-      document.getElementById("presupuesto-precio").innerHTML = precioUnitario;
-      document.getElementById("presupuesto-precio2").innerHTML = precioFinal;
+      presupuestoDescipcion.innerHTML = `Valor del servicio "mesa dulce"`;
+      presupuestoPrecio.innerHTML = precioUnitario;
+      presupuestoPrecio2.innerHTML = precioFinal;
       break;
     case 1:
       precioUnitario = 300;
       precioFinal = precioUnitario * cantidades;
-      document.getElementById(
-        "presupuesto-descripcion1"
-      ).innerHTML = `Valor del servicio "salado"`;
-      document.getElementById("presupuesto-precio").innerHTML = precioUnitario;
-      document.getElementById("presupuesto-precio2").innerHTML = precioFinal;
+      presupuestoDescipcion.innerHTML = `Valor del servicio "salado"`;
+      presupuestoPrecio.innerHTML.innerHTML = precioUnitario;
+      presupuestoPrecio2.innerHTML = precioFinal;
       break;
     case 2:
       precioUnitario = 525;
       precioFinal = precioUnitario * cantidades;
-      document.getElementById(
-        "presupuesto-descripcion1"
-      ).innerHTML = `Valor del servicio completo`;
-      document.getElementById("presupuesto-precio").innerHTML = precioUnitario;
-      document.getElementById("presupuesto-precio2").innerHTML = precioFinal;
+      presupuestoDescipcion.innerHTML = `Valor del servicio completo`;
+      presupuestoPrecio.innerHTML = precioUnitario;
+      presupuestoPrecio2.innerHTML = precioFinal;
 
       break;
     default:
@@ -138,35 +135,32 @@ function switchServicios() {
 function switchNivel() {
   let invitadoNivel = 0;
   let final = 0;
+  let presupuestoDescipcion=document.querySelector("#presupuesto-descripcion3");
+  let presupuestoNivel=document.querySelector("#presupuesto-nivel");
+  let presupuestoNivel2=document.querySelector("#presupuesto-nivel2");
   switch (vNivel) {
     case 0:
       invitadoNivel = 100;
       final = cantidades * invitadoNivel;
-      document.getElementById(
-        "presupuesto-descripcion3"
-      ).innerHTML = `El precio extra nivel basico `;
-      document.getElementById("presupuesto-nivel").innerHTML = invitadoNivel;
-      document.getElementById("presupuesto-nivel2").innerHTML = final;
+      presupuestoDescipcion.innerHTML = `El precio extra nivel basico `;
+      presupuestoNivel.innerHTML = invitadoNivel;
+      presupuestoNivel2.innerHTML = final;
 
       break;
     case 1:
       invitadoNivel = 125;
       final = cantidades * invitadoNivel;
-      document.getElementById(
-        "presupuesto-descripcion3"
-      ).innerHTML = `El precio extra nivel medio `;
-      document.getElementById("presupuesto-nivel").innerHTML = invitadoNivel;
-      document.getElementById("presupuesto-nivel2").innerHTML = cantidades;
+      presupuestoDescipcion.innerHTML = `El precio extra nivel medio `;
+      presupuestoNivel.innerHTML = invitadoNivel;
+      presupuestoNivel2.innerHTML = cantidades;
 
       break;
     case 2:
       invitadoNivel = 200;
       final = cantidades * invitadoNivel;
-      document.getElementById(
-        "presupuesto-descripcion3"
-      ).innerHTML = `El precio extra nivel premium `;
-      document.getElementById("presupuesto-nivel").innerHTML = invitadoNivel;
-      document.getElementById("presupuesto-nivel2").innerHTML = final;
+      presupuestoDescipcion.innerHTML = `El precio extra nivel premium `;
+      presupuestoNivel.innerHTML = invitadoNivel;
+      presupuestoNivel2.innerHTML = final;
 
       break;
     default:
@@ -175,18 +169,19 @@ function switchNivel() {
   return final;
 }
 function cssPrecioFinal(){
-  document.getElementById("final-final").style.fontSize = "2rem";
-  document.getElementById("final-final").style.textAlign = "center";
-  document.getElementById("final-final").style.margin = "1rem";
+  let finalFinal=document.querySelector("#final-final");
+  finalFinal.style.fontSize = "2rem";
+  finalFinal.style.textAlign = "center";
+  finalFinal.style.margin = "1rem";
 }
 function precioFinalCatering() {
   total = precioFinalNivel + precioFinalServicio;
-  document.getElementById("final-final").innerHTML = `Total: $${total}`;
+  document.querySelector("#final-final").innerHTML = `Total: $${total}`;
 }
 
 function agregarOpcionesCuotas(){
-  document.getElementById("titulo-cuotas").style.opacity = 1;
-  document.getElementById("cuotas").style.opacity = 1;
+  document.querySelector("#titulo-cuotas").style.opacity = 1;
+  document.querySelector("#cuotas").style.opacity = 1;
 }
 //BOTON CUOTAS
 function calcularRecargo() {
@@ -195,7 +190,7 @@ function calcularRecargo() {
   detalleCuotas(conInteres, interes);
 }
 function interesCuotas() {
-  let interes = Number(document.getElementById("cantidadCuotas").value);
+  let interes = Number(document.querySelector("#cantidadCuotas").value);
   return interes;
 }
 function sumarInteres(interes) {
@@ -205,8 +200,8 @@ function sumarInteres(interes) {
 }
 function detalleCuotas(conInteres, interes){
   let precioCuota= conInteres / interes;
-  document.getElementById("precioInteres").innerHTML = `El precio final con los intereses es de: $${conInteres}`;
-  document.getElementById("precioCuota").innerHTML = `El precio de cada cuota será de: $${precioCuota.toFixed(2)}`;
+  document.querySelector("#precioInteres").innerHTML = `El precio final con los intereses es de: $${conInteres.toFixed(2)}`;
+  document.querySelector("#precioCuota").innerHTML = `El precio de cada cuota será de: $${precioCuota.toFixed(2)}`;
   
 }
 
