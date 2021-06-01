@@ -1,6 +1,6 @@
 const productos = [{
     nombre:"Cupcakes OREO",
-    imagen: "/img/dulce/categoria1b.jpg",
+    imagen: "./img/dulce/categoria1b.jpg",
     tipo:"dulce",
     precio: 999,
     codigo:001
