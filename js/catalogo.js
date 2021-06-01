@@ -1,94 +1,191 @@
-const dulce=[{
+const productos = [{
     nombre:"Cupcakes OREO",
-    imagen: "categoria1.jpeg",
+    imagen: "/img/dulce/categoria1b.jpg",
+    tipo:"dulce",
+    precio: 999,
+    codigo:001
 },{
     nombre:"Torta mouse de OREO",
-    imagen: "categoria2.jpeg",
+    imagen: "./img/dulce/categoria2.jpeg",
+    tipo:"dulce",
+    precio: 999,
+    codigo:002
 },
 {
     nombre:"Cheesecake",
-    imagen: "categoria3.jpeg",
+    imagen: "./img/dulce/categoria3.jpeg",
+    tipo:"dulce",
+    precio: 999,
+    codigo:003
 },{
     nombre:"Alfajores bomba",
-    imagen: "categoria4.jpeg",
+    imagen: "./img/dulce/categoria4.jpeg",
+    tipo:"dulce",
+    precio: 999,
+    codigo:004
 },{
     nombre:"Carrot cake",
-    imagen: "categoria7.jpeg",
+    imagen: "./img/dulce/categoria7.jpeg",
+    tipo:"dulce",
+    precio: 999,
+    codigo:05
 },{
     nombre:"Cupcakes glaseados",
-    imagen: "categoria6.jpeg",
-}];
-
- const salado=[{
+    imagen: "./img/dulce/categoria6.jpeg",
+    tipo:"dulce",
+    precio: 999,
+    codigo:06
+},
+{
     nombre:"Pizza",
-    imagen: "categoria1.jpeg",
+    imagen: "./img/salado/categoria1.jpeg",
+    tipo:"salado",
+    precio: 999,
+    codigo:07
 },{
     nombre:"Empanadas",
-    imagen: "categoria2.jpeg",
+    imagen: "./img/salado/categoria2.jpeg",
+    tipo:"salado",
+    precio: 999,
+    codigo:08
 },
 {
     nombre:"Canapé",
-    imagen: "categoria3.jpeg",
+    imagen: "./img/salado/categoria3.jpeg",
+    tipo:"salado",
+    precio: 999,
+    codigo:09
 },{
     nombre:"Miga",
-    imagen: "categoria4.jpeg",
+    imagen: "./img/salado/categoria4.jpeg",
+    tipo:"salado",
+    precio: 999,
+    codigo:10
 },{
     nombre:"Bocaditos",
-    imagen: "categoria5.jpeg",
+    imagen: "./img/salado/categoria5.jpeg",
+    tipo:"salado",
+    precio: 999,
+    codigo:11
 },{
     nombre:"Medialunas",
-    imagen: "categoria6.jpeg",
-}]; 
-const extras=[{
+    imagen: "./img/salado/categoria6.jpeg",
+    tipo:"salado",
+    precio: 999,
+    codigo:12
+},{
     nombre:"Dessert Cups",
-    imagen: "extra3.jpeg",
+    imagen: "./img/extras/extra3.jpeg",
+    tipo:"extra",
+    codigo:13
 },{
     nombre:"Dragon Fruit Panna",
-    imagen: "extra6.jpeg",
+    imagen: "./img/extras/extra6.jpeg",
+    tipo:"extra",
+    precio: 999,
+    codigo:14
 },
 {
     nombre:"Meyer Lemon Parfaits",
-    imagen: "extra5.jpeg",
+    imagen: "./img/extras/extra5.jpeg",
+    tipo:"extra",
+    precio: 999,
+    codigo:15
 },{
     nombre:"Dessert Shooters",
-    imagen: "extra4.jpeg",
+    imagen: "./img/extras/extra4.jpeg",
+    tipo:"extra",
+    codigo:16
 },{
     nombre:"Cheesecake parfaits",
-    imagen: "extra2.jpeg",
+    imagen: "./img/extras/extra2.jpeg",
+    tipo:"extra",
+    precio: 999,
+    codigo:17
 },{
     nombre:"cheesecake caramel",
-    imagen: "extra1.jpeg",
-}]; 
-document.getElementById("dulce1").style.display="inline-grid";
-    let d="Dulce"
-    mostrarElementos(d, dulce);
-function verDulce(){
-    document.getElementById("dulce1").style.display="inline-grid";
-    let d="Dulce"
-    mostrarElementos(d, dulce);
+    imagen: "./img/extras/extra1.jpeg",
+    tipo:"extra",
+    precio: 999,
+    codigo:18
+}];
 
+function verDulce(){
+    let tipo="dulce"
+    mostrarFiltrado(tipo)
 }
 function verSalado(){
-    document.getElementById("salado").style.display="inline-grid";
-    let s= "Salado"
-   mostrarElementos(s, salado);
+    let tipo="salado"
+    mostrarFiltrado(tipo)
 }
 function verExtras(){
-    document.getElementById("extras").style.display="inline-grid";
-    let e= "Extras"
-   mostrarElementos(e, extras);
+    let tipo="extra"
+    mostrarFiltrado(tipo);
 }
-function mostrarElementos(elemento, array){
-document.querySelector("#titulo").innerHTML=elemento;
-for(let i = 0 ; i <= array.length ; i ++){
-    document.querySelector(".img"+[i+1]).innerHTML= `<img src=./img/${elemento}/${array[i].imagen}>` + array[i].nombre;
+function verTodo(){
+    cargarProductos();
 }
+cargarProductos();
+
+function cargarProductos(){
+    limpiarPantalla()
+    productos.forEach(producto => {
+    const div = document.createElement(`div`);
+    div.innerHTML = `
+    <div class="productos">
+        <div class="productos-producto">
+            <div>
+                ${producto.nombre}
+            </div>
+            <div>
+            <img class="img-productos" src="
+                ${producto.imagen}">
+            </div>
+            <div>
+                ${producto.precio}
+            </div>
+            <div>
+                <input type="button" class="botonCarrito" onClick="botonCarrito()" value="Agregar al carrito">
+            </div>
+        </div>
+    </div>`;
+    document.querySelector("#main-app").appendChild(div);
+})
 }
-function ocultarExtras(){
-    document.getElementById("extra").style.display="none"
+
+function mostrarFiltrado(filtro){
+        limpiarPantalla();
+
+        productos.forEach(producto => {
+        const div = document.createElement(`div`);
+        if(producto.tipo==filtro){
+        div.innerHTML = `
+        <div class="productos">
+            <div class="productos-producto">
+                <div>
+                    ${producto.nombre}
+                </div>
+                <div>
+                    <img class="img-productos" src="
+                    ${producto.imagen}">
+                </div>
+                <div>
+                    ${producto.precio}
+                </div>
+                <div>
+                    <input type="button" class="botonCarrito" onClick="botonCarrito()" value="Agregar al carrito">
+                </div>
+            </div>
+        </div>`;
+        document.querySelector("#main-app").appendChild(div);
+        }
+    })
 }
-function ocultarSalado(){
-    document.getElementById("salado").style.display="none"
-}function ocultarDulce(){
-    document.getElementById("dulce1").style.display="none"
+
+function limpiarPantalla(){
+    document.querySelector("#main-app").innerHTML="";
+
+}
+function botonCarrito(){
+    swal("Agregado al carrito","","success")
 }

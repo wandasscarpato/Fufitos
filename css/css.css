@@ -23,7 +23,7 @@ h1{
     margin: 0em;
 }
 header{
-    background-color: rgba(43, 206, 189, 0.609);
+    background-color: rgba(43, 206, 190, 0.808);
     padding-bottom: 0.1rem;
     position: fixed;
     width: 100%;
@@ -100,4 +100,7 @@ ul{
 }
 a.titulo:hover {
     color: rgb(164, 73, 200);
+}
+.arriba{
+    position: absolute;
 }

@@ -1,0 +1,63 @@
+
+html{
+    scroll-behavior: smooth;
+}
+/*footer*/
+.subir button a, .footer-grid-lista a{
+    text-decoration: none;
+    color: rgb(9, 41, 41);
+}
+.subir button{
+    padding: 0.8rem;
+    border: none;
+    background-color: rgba(68, 207, 193, 0.89);
+    font-size: 1rem;
+    color: rgb(80, 231, 218);
+    border-radius: 20px;
+    border: 1px solid rgb(22, 87, 83);
+}
+footer{
+    background-color: rgba(82, 223, 223, 0.747);
+    margin-top: 2%;
+}
+.footer-grid{
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    justify-content: space-between;
+    text-align: center;
+    padding-top: 2rem;
+}
+.footer-grid div button{
+    margin-top: 2rem;
+}
+.footer-grid div img{
+    width: 40%;
+}
+.footer-grid-lista{
+    list-style: none;
+    font-size: 1.2rem;
+    justify-content: space-around;
+}
+.footer-grid-2{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+}
+.footer-grid-lista--modif{
+    display: flex;
+}
+.footer-grid-lista--modif li{
+    padding: 1rem;
+}
+ul.footer-grid-lista.footer-grid-lista--modif.footer-grid-lista-iconos {
+    margin: 0;
+    padding: 0;
+}
+.fab {
+    color: rgb(31, 68, 68);
+    font-size: 1.5rem;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
