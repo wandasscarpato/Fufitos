@@ -1,0 +1,20 @@
+#dulce1,#salado,#extra {
+    display: grid;
+    grid-template-columns: 20% 20% 20%;
+    justify-content: space-evenly;
+}
+#dulce1 div img, #salado div img,#extra div img{
+    max-width: 100%;
+    border-radius: 25px;
+}
+h3{
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: plum;
+}
+.ver{
+
+}
+.primero{
+    margin: 0em;
+}

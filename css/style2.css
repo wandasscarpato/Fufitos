@@ -4,6 +4,7 @@ body{
     background-color: rgba(179, 238, 241, 0.205);
     background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23e586f0' fill-opacity='0.33' fill-rule='evenodd'/%3E%3C/svg%3E");
     margin: 0;
+    overflow: hidden;
 }
 label{
     font-size: 1.2rem;
@@ -23,7 +24,7 @@ label{
 #titulo-cuotas{
     padding-top: 1rem;
 }
-.formulario, header, .datos{
+.formulario, .datos{
     text-align: center;
 }
 .titulo{
@@ -39,7 +40,7 @@ label{
 }
 .formulario{
     border-radius: 30px;
-    padding: 1rem;
+    padding: 1rem 0px ;
     width: 100%;
     margin: 0 auto;
 }
@@ -57,6 +58,7 @@ label{
 .btnsolicitar, .ocultar {
     opacity: 0;
 }
+
 #bloquePresupuesto{
     padding: 1rem;
     width: 40%;
@@ -98,7 +100,7 @@ label{
 #titulo-cuotas{
     opacity: 0;
 }
-#cuotas{
+#cuotas, #terminarReserva{
     text-align: center;
     opacity: 0;
 }
@@ -108,23 +110,15 @@ label{
     margin: 1rem 0rem;
 }
 .swal-text {
-    color: rgb(56, 7, 58);
+    color: rgb(53, 4, 54);
+    font-size: 1.2rem;
+    font-family: sans-serif
 }
 .swal-title {
     font-weight: bolder;
     color: rgb(98, 0, 128);
 }
-.header{
-    position: fixed;
-    z-index: 2;
-    background-color: rgba(0, 255, 229, 0.548);
-    width: 50%;
-    text-align: center;
-    color: white;
-    font-family: 'Great Vibes', cursive;
-    font-size: 1.2rem;
-    padding: 0.5rem;
-}
+
 .Fufitos{
     z-index: 2;
     background-color: rgba(37, 197, 181, 0.787);
@@ -140,7 +134,7 @@ label{
 }
 /*botones, selectores*/
 
-#cantidadCuotas, #cantidadInvitados,input,.enviarDatos ,.calcularCuotas{
+#cantidadCuotas, #cantidadInvitados,input,.enviarDatos ,.calcularCuotas, #terminarReserva button{
     background-color:rgb(221, 153, 248);
     color:  rgb(31, 126, 116);
     border-radius: 15px;
@@ -148,6 +142,10 @@ label{
     font-size: 1rem;
     margin: 0.5rem;
     padding: 0.2rem;
+}
+#terminarReserva button{
+    padding: 0.5rem;
+
 }
 .enviarDatos, .calcularCuotas{
     padding: 0.5rem;
@@ -158,4 +156,79 @@ a{
 }
 a:hover{
     color: rgb(194, 65, 206);
+}
+
+/*nuevo*/
+.gridOpciones{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.gridOpciones img{
+    max-width: 80%;
+}
+
+/*nuevo*/
+.t{
+    
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    position: relative;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    color: rgb(255, 255, 255);
+    z-index: 2;
+    margin-bottom: 0.4rem;
+}
+h1{
+    margin: 0em;
+}
+header{
+    background-color: rgba(43, 206, 189, 0.609);
+    padding-bottom: 0.1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+a{
+    text-decoration: none;
+    color: rgb(235, 99, 205);
+}
+.nav{
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.nav-ul li{
+    list-style: none;
+    display: inline;
+    margin: 1rem;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+.nav-ul{
+    margin-top:0;
+}
+.nav-ul li:hover{
+    color: white;
+}
+.nav-ul a:hover{
+    color: white;
+}
+.nav-ul li:hover{
+    border-radius: 15px;
+    background-color: rgb(182, 105, 212);
+    padding: 0.3rem;
+    text-align: center;
+    color: white;
+}
+ul{
+    padding: 0;
+}
+.titulo{
+    margin: 0;
+    padding-top: 8rem;
+    width: 100%;
+    text-align: center;
 }

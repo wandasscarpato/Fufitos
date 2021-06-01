@@ -10,7 +10,7 @@ body{
 .imagen img{
     max-width: 100%;
 }
-.Titulo{
+/* .Titulo{
     position: fixed;
     z-index: 2;
     background-color: rgba(0, 255, 229, 0.548);
@@ -20,7 +20,7 @@ body{
     font-family: 'Great Vibes', cursive;
     font-size: 1.7rem;
     padding: 0.5rem;
-}
+} */
 h1{
     margin: 0;
 }
@@ -79,9 +79,6 @@ h1{
     text-decoration: none;
     color: rgb(9, 41, 41);
 }
-a:hover{
-    color: rgb(194, 65, 206);
-}
 .subir button{
     padding: 0.8rem;
     border: none;
@@ -135,4 +132,52 @@ ul.footer-grid-lista.footer-grid-lista--modif.footer-grid-lista-iconos {
 a{
     color: white;
     text-decoration: none;
+}
+/*form*/
+form{
+    background-color: rgba(62, 201, 211, 0.521);
+    padding-bottom: 1.5rem;
+    margin-top: 2rem;
+}
+.form-titulo{
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 1rem;
+    border-bottom: 1px solid black;
+}
+.grid-form{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    text-align: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.form-label{
+    font-size: 1.3rem;
+}
+.form-input{
+    width: 90%;
+    border: none;
+    color: rgb(190, 45, 190);
+    padding: 0.8rem;
+    margin: 0.5rem;
+}
+textarea.form-input{
+    width: 100%;
+    height: 80%;
+}
+.enviarConsulta{
+    display: flex;
+    padding: 0.5rem;
+    background-color: violet;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    justify-content: center;
+    width: 50%;
+    margin: 0 25%;
+}
+.nav-ul li a{
+    color: rgb(255, 255, 255);
 }

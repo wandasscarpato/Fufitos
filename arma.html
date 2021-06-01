@@ -18,12 +18,26 @@
 </head>
 
 <body>
-    <div class="Fufitos">
-        <a href="./index.html"><h1>Fufitos</h1></a>
-    </div>
     <header>
-            <h1 class="titulo">Arma tu catering</h1>
+        <a class="t" href="./index.html">
+                <h1>Fufitos</h1>
+        </a>
+        <nav class="nav">
+            <ul class="nav-ul">
+                <li> <a href="index.html">Inicio</a>
+                    
+                </li>
+                <li>
+                    <a href="catalogo.html">Catalogo</a> 
+                </li>
+                <li>
+                    <a href="arma.html">Arma tu catering</a> 
+                    
+                </li>
+            </ul>
+        </nav>
     </header>
+    <h1 class="titulo">Arma tu catering</h1>
     <div class="container">
         <!--Formulario-->
         <form>
@@ -53,7 +67,14 @@
                     <input type="button" onclick="verCompleto()" value="ver">
 
                 </div>
-                <div>
+                <!-- <label for="">¿Que servicio desea contratar?</label> <br>
+                <div class="gridOpciones">
+                    <div> <img src="./img/dulce.png" alt=""> </div>
+                    <div> <img src="./img/salado.png" alt=""> </div>
+                    <div> <img src="./img/mixto.png" alt=""> </div>
+                </div>
+                 -->
+                 <div>
                     <label for="">Seleccione el nivel del servicio esperado</label> <br>
                     <input type="radio" id="nivel" name="nivel" value="basico" checked>
                     <label for="basico">Basic</label>
@@ -159,10 +180,12 @@
         <div id="precioCuota">
 
         </div>
+        <div id="terminarReserva">
+            <button onclick="terminarCompra()">Contratar servicio</button>
+        </div>
     </div>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="./js/js.js"></script>
     <script src="./js/arrays.js"></script>
 </body>
 

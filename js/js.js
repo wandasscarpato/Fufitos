@@ -58,6 +58,7 @@ function mostrarOcultos(){
   document.querySelector("#bloque2").style.backgroundColor ="rgba(113, 230, 230, 0.479)";
   document.querySelector("#bloquePresupuesto").style.backgroundColor="rgba(113, 230, 230, 0.479)";
   document.querySelector("#bloque3").style.backgroundColor ="rgba(113, 230, 230, 0.479)";
+  document.querySelector("body").style.overflow="auto";
 }
 //extraigo la cant de invitados
 function cantidadInvitados() {
@@ -182,9 +183,11 @@ function precioFinalCatering() {
 function agregarOpcionesCuotas(){
   document.querySelector("#titulo-cuotas").style.opacity = 1;
   document.querySelector("#cuotas").style.opacity = 1;
+
 }
 //BOTON CUOTAS
 function calcularRecargo() {
+  mostrarOcultosFinalizar();
   let interes = interesCuotas();
   let conInteres=sumarInteres(interes);
   detalleCuotas(conInteres, interes);
@@ -202,7 +205,16 @@ function detalleCuotas(conInteres, interes){
   let precioCuota= conInteres / interes;
   document.querySelector("#precioInteres").innerHTML = `El precio final con los intereses es de: $${conInteres.toFixed(2)}`;
   document.querySelector("#precioCuota").innerHTML = `El precio de cada cuota será de: $${precioCuota.toFixed(2)}`;
-  
+}
+function mostrarOcultosFinalizar(){
+  document.querySelector("#terminarReserva").style.opacity=1;
+}
+/*TERMINAR COMPRA*/
+function terminarCompra(){
+  cartelTerminada();
 }
 
-
+function cartelTerminada(){
+  swal("Reserva realizada", "Nos contactaremos con usted!", "success")
+}
+/*envio de formulario*/
