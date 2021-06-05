@@ -4,7 +4,7 @@ const productos = [
     imagen: "./img/dulce/categoria1b.jpg",
     tipo: "dulce",
     precio: 999,
-    stock: 10,
+    stock: 9,
     codigo: 001,
   },
   {
@@ -12,7 +12,7 @@ const productos = [
     imagen: "./img/dulce/categoria2.jpeg",
     tipo: "dulce",
     precio: 999,
-    stock: 10,
+    stock: 6,
     codigo: 002,
   },
   {
@@ -20,7 +20,7 @@ const productos = [
     imagen: "./img/dulce/categoria3.jpeg",
     tipo: "dulce",
     precio: 999,
-    stock: 10,
+    stock: 4,
     codigo: 003,
   },
   {
@@ -140,7 +140,7 @@ const productos = [
     precio: 999,
     stock: 10,
     codigo: 18,
-  },
+  }
 ];
 let contenedor=document.getElementById("contenedor");
 let contadorCarrito=document.getElementById("contadorCarrito");
@@ -166,17 +166,29 @@ function cargarProductos() {
             <div>
                 ${producto.precio}
             </div>
+            <div id="${producto.codigo}cantidadDisponible">
+            </div>
             <div>
             <button id="${producto.codigo}" onclick="botonCarrito()">Agregar al carrito</button>
             </div>
         </div>
     </div>`;
     document.querySelector("#main-app").appendChild(div);
+    cantidadXStock(producto.stock,producto.codigo);
     let boton = document.getElementById(`${producto.codigo}`);
     boton.addEventListener("click", () => {
       agregarAlCarrito(`${producto.codigo}`);
     })
   });
+}
+
+function cantidadXStock(stock, id){
+ let dispo=document.getElementById(`${id}cantidadDisponible`);
+ let opciones;
+  for(let i=0; i<=stock; i++){
+    opciones+=`<option> ${i+1} </option>`
+  }
+  dispo.innerHTML=`<select> ${opciones} </select>`
 }
 
 function mostrarFiltrado(filtro) {
@@ -187,27 +199,29 @@ function mostrarFiltrado(filtro) {
     if (producto.tipo == filtro) {
       div.innerHTML = `
         <div class="productos">
-            <div class="productos-producto">
-                <div>
-                    ${producto.nombre}
-                </div>
-                <div>
-                    <img class="img-productos" src="
-                    ${producto.imagen}">
-                </div>
-                <div>
-                    ${producto.precio}
-                </div>
-                <div>
-                    <button id="${producto.codigo}" onclick="botonCarrito()">Agregar al carrito</button>
-                </div>
+        <div class="productos-producto">
+        <div>
+            ${producto.nombre}
+        </div>
+        <div>
+        <img class="img-productos" src="
+            ${producto.imagen}">
+        </div>
+        <div>
+            ${producto.precio}
+        </div>
+        <div id="${producto.codigo}cantidadDisponible">
+        </div>
+        <div>
+        <button id="${producto.codigo}" onclick="botonCarrito()">Agregar al carrito</button>
+        </div>
             </div>
         </div>`;
       document.querySelector("#main-app").appendChild(div);
-
-      let boton = document.getElementById(`${producto.codigo}`);
-      boton.addEventListener("click", () => {
-        agregarAlCarrito(`${producto.codigo}`);
+    cantidadXStock(producto.stock,producto.codigo);
+    let boton = document.getElementById(`${producto.codigo}`);
+    boton.addEventListener("click", () => {
+      agregarAlCarrito(`${producto.codigo}`);
       });
       
     }
@@ -231,11 +245,13 @@ function verCarrito(){
 
 }
 function sinProductos(){
-  if(contadorCarrito.innerHTML==0){
+  if(carritoDeCompras.length==0){
     document.querySelector(".sinProductos").style.display="block";
+    document.querySelector(".precio").style.display="none";
   }else{
     document.querySelector(".sinProductos").style.display="none";
-  }
+    document.querySelector(".precio").style.display="block";
+  } 
 }
 function closeModal(){
   modal.style.display="none";
@@ -249,34 +265,43 @@ function agregarAlCarrito(id) {
  //Agregar producto al carrito
   let productoAgregar = productos.filter(elemento => elemento.codigo == id)[0];
   carritoDeCompras.push(productoAgregar);
-  actualizarCarrito();
   agregarItemAlCarrito(productoAgregar);
-  let botoneliminar=document.getElementById(`${productoAgregar.codigo}b`)
-  botoneliminar.addEventListener(`click`,()=>{
-        botoneliminar.parentElement.remove()
-        carritoDeCompras= carritoDeCompras.filter((elemento)=>elemento.codigo != productoAgregar.codigo);
-        actualizarCarrito();
-  
-  })}
+  actualizarCarrito();
+  //eliminarProductoDelCarrito(productoAgregar);
+}
 }
 
+function eliminarProductoDelCarrito(productoAgregar) {
+  let botoneliminar=document.getElementById(`${productoAgregar}b`)
+  //botoneliminar.addEventListener(`click`, () => {
+    botoneliminar.parentElement.remove();
+    console.log(botoneliminar.parentElement);
+    carritoDeCompras = carritoDeCompras.filter((elemento) => elemento.codigo != productoAgregar);
+  //});
+}
+function eliminarYRefrescar(id){
+  eliminarProductoDelCarrito(id);
+  actualizarCarrito();
+}
 function agregarItemAlCarrito(productoAgregar) {
   if (!productoAgregar) return;
-
+  let cantidadProd=document.getElementById(`${productoAgregar.codigo}b`);
   let div = document.createElement(`div`);
   div.classList.add("contenedor-carrito-productos");
   div.innerHTML += `
         <p>Producto: ${productoAgregar.nombre} </p>
         <p>Precio: ${productoAgregar.precio}  </p>
-        <button id="${productoAgregar.codigo}b" class="eliminar-producto">eliminar</button>
+        <p>${cantidadProd}</p>
+        <button id="${productoAgregar.codigo}b" onclick="eliminarYRefrescar(${productoAgregar.codigo})" class="eliminar-producto">eliminar</button>
         `;
   contenedor.appendChild(div);
 }
 
 function actualizarCarrito(){
     contadorCarrito.innerText = carritoDeCompras.length;
-    localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras))
-    //precioFinal.innerHTML = carritoDeCompras.reduce((acc, el)=> acc + el.precio, 0)
+    localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
+    precioFinal.innerHTML = carritoDeCompras.reduce((acc, el)=> acc + el.precio, 0);
+    sinProductos();
 }
 function limpiarPantalla() {
   document.querySelector("#main-app").innerHTML = "";
