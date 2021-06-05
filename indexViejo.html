@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--fuentes-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <!--Estilos-->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/header.css">
+
+    <!--keywords-->
+    <title>Fufitos</title>
+</head>
+
+<body>
+    <a name="arriba"></a>
+    <header>
+        <a class="t" href="./index.html">
+                <h1>Fufitos</h1>
+        </a>
+        <nav class="nav">
+            <ul class="nav-ul">
+                <li> <a href="index.html">Inicio</a>
+                    
+                </li>
+                <li>
+                    <a href="catalogo.html">Catalogo</a> 
+                </li>
+                <li>
+                    <a href="arma.html">Arma tu catering</a> 
+                    
+                </li>
+                <li>
+                    <i class="fas fa-shopping-cart carrito"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="imagen">
+        <img src="./img/slider-img1.jpeg" alt="">
+        <div class="imagen-texto">
+            <button onclick="redireccionar()">Arma tu catering</button>
+        </div>
+    </div>
+    <!--Nosotros-->
+    <div class="nosotros">
+        <div class="nosotros-grid">
+            <div class="nosotros-grid-datos">
+                <div class="nosotros-grid-datos-titulo">
+                    Tu servicio de catering a la medida justa
+                </div>
+                <div class="grid-nosotros">
+                    Fufitos esta aqui para a ofrecerte una forma agil de preparar tus eventos sin que dejen de ser
+                    tuyos.<br>
+                    Aqui podras encontrar aquello que buscas para agazajar a tus invitados, tendras la posibilidad de
+                    elegir desde la cantidad de empleados a tu disposicion como los platos que te acompañaran en ese
+                    momento tan especial. <br>
+                    Un equipo de profesionales a tu completa disposicion. <br>
+                    Los postres clasicos, las tortas mas ricas y las mejores entradas, platos gourmet, mediterraneos,
+                    etc..<br>
+                    Animate a descubrir. Animate a elegir. Acercate a probar.
+                </div>
+            </div>
+            <div class="nosotros-grid-imagen">
+                <img src="./img/blanco.png" alt="">
+            </div>
+        </div>
+    </div>
+    <form action="mailto:wandasscarpato@gmail.com" method="post">
+        <label class="form-titulo"  for="consulta">¡Dejanos tu mensaje!</label>
+        <div class="grid-form">
+        <div>
+            <div>
+                <label class="form-label" for="nombre">Nombre</label> <br>
+                <input  class="form-input"type="text" required>
+            </div>
+            <div>
+                <label class="form-label" for="apellido">Apellido</label> <br>
+                <input  class="form-input"type="text" required>
+            </div>
+            <div>
+                <label class="form-label" for="email">email</label> <br>
+                <input  class="form-input"type="text" required>
+            </div>
+            <div>
+                <label class="form-label" for="telefono">telefono</label> <br>
+                <input class="form-input" type="number" required>
+            </div>
+            
+        </div>
+        <div>
+            <label class="form-label" for="msj">Ingrese su consulta</label> <br>
+            <textarea class="form-input" name="msj" id="" cols="30" rows="10" required></textarea>
+        </div>
+    </div>
+    <button class="enviarConsulta">ENVIAR</button>
+    </form>
+    <!--Footer-->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <ul class="footer-grid-lista">
+                    <li>
+                        <a href="tel:4445555">444-555</a>
+                    </li>
+                    <li>
+                        <a href="#">Av. Las Heras 3796</a>
+                    </li>
+                    <li>
+                        <a href="mailto:fufitos@gmail.com">fufitos@gmail.com</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="subir">
+                <button>
+                    <a href="./index.html#arriba">Arriba</a>
+                </button>
+            </div>
+            <div>
+                <img src="./img/tarjetas.png" alt="">
+            </div>
+        </div>
+        <div class="footer-grid-2">
+            <div class="footer-grid-2-redes">
+                <ul class="footer-grid-lista footer-grid-lista--modif footer-grid-lista-iconos">
+                    <li>
+                        <i class="fab fa-facebook"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-instagram"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-whatsapp"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-twitter"></i>
+                    </li>
+                    <li>
+                        <i class="fab fa-pinterest"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-shopping-cart carrito"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="./js/arrays.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
