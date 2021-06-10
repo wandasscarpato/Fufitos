@@ -547,4 +547,3 @@ let contador=0;
     contadorCarrito.innerText = contador;
     cartelCarrito();
 }
-

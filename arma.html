@@ -20,6 +20,7 @@
 
 
     <title>Fufitos-Arma tu catering</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -59,18 +60,18 @@
                 </div>
                 <div>
                     <label for="">¿Que servicio desea contratar?</label> <br>
+                    <div class="seccion-dulce">
                     <input type="radio" id="servicio" name="servicio" value="dulce" checked>
                     <label for="dulce">Mesa dulce</label>
-                    <input type="button" onclick="verDulce()" value="ver">
-                    <br>
+                    </div>
+                    <div class="seccion-salado">
                     <input type="radio" id="servicio1" name="servicio" value="salado">
                     <label for="salado">Platos salado</label>
-                    <input type="button" onclick="verSalado()" value="ver">
-                    <br>
+                    </div>
+                    <div class="seccion-completo">
                     <input type="radio" id="servicio2" name="servicio" value="completo">
                     <label for="completo">Servicio completo</label>
-                    <input type="button" onclick="verCompleto()" value="ver">
-
+                    </div>
                 </div>
                 <!-- <label for="">¿Que servicio desea contratar?</label> <br>
                 <div class="gridOpciones">
@@ -239,6 +240,20 @@
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="./js/arrays.js"></script>
+    <script>
+        $(".seccion-dulce").append(`<input type="button" id="verDulce" value="ver">`);
+        $("#verDulce").click(function(){
+            verDulce()
+        })
+        $(".seccion-salado").append(`<input type="button" id="verSalado" value="ver">`);
+        $("#verSalado").click(function(){
+            verSalado()
+        })
+        $(".seccion-completo").append(`<input type="button" id="verCompleto" value="ver">`);
+        $("#verCompleto").click(function(){
+            verAperitivos()
+        })
+    </script>
 </body>
 
 </html>

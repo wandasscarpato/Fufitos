@@ -237,7 +237,7 @@ function verDulce(){
 } 
 function verAperitivos(){
     let array=ordenarAlfabeticamente(extra)
-    swal("Aperitivos", functionPlatos(array))
+    swal("Extras incluidos", functionPlatos(array))
 }
 
 function verCompleto(){
@@ -262,4 +262,3 @@ function ordenarAlfabeticamente(array){
     array.sort()
     return array;
 }
-
