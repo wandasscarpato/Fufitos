@@ -13,7 +13,6 @@
     <!--Estilos-->
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/catalogo.css">
-    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/header.css">
     <!--keywords-->
     <title>Fufitos</title>
@@ -199,43 +198,14 @@
         </div>
 
     </footer>
-
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src="./js/arrays.js"></script>
+    <script src="JSON/productos.json">
+    console.log(productos)
+    </script>
+
     <script src="./js/catalogo.js"></script>
     <script src="./js/main.js"></script>
     <script>
-
-        /*Recomendado*/
-        let n = productos[0].nombre;
-        let i = productos[0].imagen;
-        let p = productos[0].precio;
-        let llave = false;
-
-        $(".recomendado").prepend(`<button class="btnRecomendado">Ver producto destacado</button>`);
-
-        $(".recomendado").append(`
-<div class="recomendado-producto">
-<img class="recomendado-producto-img" src="${i}">
-<p>${n} <br> $${p}</p>
-</div>
-`)
-        $(".btnRecomendado").fadeOut().delay(500).fadeIn()
-        $(".recomendado").animate({ margin: "3rem" });
-        $(".btnRecomendado").on("click", () => {
-            $(".recomendado-producto-img").delay(1000).animate({ width: '10%' }, { duration: 1000 }).fadeOut().fadeIn().delay(500).animate({ width: "100%" }, { duration: 1000 });
-            if (llave) {
-                $(".recomendado-producto").fadeOut();
-                $(".recomendado").animate({ margin: "3rem" });
-                llave = false
-            }
-            else {
-                $(".recomendado-producto").fadeIn();
-                $(".recomendado").delay(100).animate({ margin: "0rem" }, { duration: 500 });
-
-                llave = true
-            }
-        })
 
         function ajax() {
             const http = new XMLHttpRequest();
@@ -256,7 +226,6 @@
             ajax()
         })
     </script>
-        <script src="productos.json"></script>
 </body>
 
 </html>

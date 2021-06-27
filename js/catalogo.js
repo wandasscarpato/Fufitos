@@ -1,11 +1,14 @@
+function redireccionar(){
+  window.location="arma.html";
+}
 const productos = [
   {
-    nombre: "Cupcakes OREO",
+    "nombre": "Cupcakes OREO",
     imagen: "./img/dulce/categoria1b.jpg",
     tipo: "dulce",
     precio: 999,
     stock: 9,
-    codigo: 001,
+    codigo: 1,
   },
   {
     nombre: "Torta mouse de OREO",
@@ -13,7 +16,7 @@ const productos = [
     tipo: "dulce",
     precio: 999,
     stock: 6,
-    codigo: 002,
+    codigo: 2,
   },
   {
     nombre: "Cheesecake",
@@ -21,7 +24,7 @@ const productos = [
     tipo: "dulce",
     precio: 999,
     stock: 4,
-    codigo: 003,
+    codigo: 3,
   },
   {
     nombre: "Alfajores bomba",
@@ -29,7 +32,7 @@ const productos = [
     tipo: "dulce",
     precio: 999,
     stock: 10,
-    codigo: 004,
+    codigo: 4,
   },
   {
     nombre: "Carrot cake",
@@ -37,7 +40,7 @@ const productos = [
     tipo: "dulce",
     precio: 999,
     stock: 10,
-    codigo: 05,
+    codigo: 5,
   },
   {
     nombre: "Cupcakes glaseados",
@@ -45,7 +48,7 @@ const productos = [
     tipo: "dulce",
     precio: 999,
     stock: 10,
-    codigo: 06,
+    codigo: 6,
   },
   {
     nombre: "Pizza",
@@ -53,7 +56,7 @@ const productos = [
     tipo: "salado",
     precio: 999,
     stock: 10,
-    codigo: 07,
+    codigo: 7,
   },
   {
     nombre: "Empanadas",
@@ -61,7 +64,7 @@ const productos = [
     tipo: "salado",
     precio: 999,
     stock: 10,
-    codigo: 08,
+    codigo: 8,
   },
   {
     nombre: "Canapé",
@@ -69,7 +72,7 @@ const productos = [
     tipo: "salado",
     precio: 999,
     stock: 10,
-    codigo: 09,
+    codigo: 9,
   },
   {
     nombre: "Miga",
@@ -143,7 +146,8 @@ const productos = [
     stock: 10,
     codigo: 18,
   }
-];
+]; 
+
 /*Carga de productos*/
 function verDulce() {
   let tipo = "dulce";
@@ -181,15 +185,15 @@ function mostrarTodo() {
     div.innerHTML = `
     <div class="productos">
         <div class="productos-producto">
-            <div>
+            <div class="producto_nombre">
                 ${producto.nombre}
             </div>
             <div>
             <img class="img-productos" src="
                 ${producto.imagen}">
             </div>
-            <div>
-                ${producto.precio}
+            <div class="producto-precio">
+            $ ${producto.precio}
             </div>
             <div id="${producto.codigo}cantidadDisponible">
             </div>
@@ -225,15 +229,15 @@ function devolverStock(id) {
     div.innerHTML = `
     <div class="productos">
         <div class="productos-producto">
-            <div>
+            <div class="producto_nombre">
                 ${producto.nombre}
             </div>
             <div>
             <img class="img-productos" src="
                 ${producto.imagen}">
             </div>
-            <div>
-                ${producto.precio}
+            <div class="producto-precio">
+               $ ${producto.precio}
             </div>
             <div id="${producto.codigo}cantidadDisponible">
             </div>
@@ -262,15 +266,15 @@ function mostrarFiltrado(filtro) {
       div.innerHTML = `
         <div class="productos">
         <div class="productos-producto">
-        <div>
+        <div class="producto_nombre">
             ${producto.nombre}
         </div>
         <div>
         <img class="img-productos" src="
             ${producto.imagen}">
         </div>
-        <div>
-            ${producto.precio}
+        <div class="producto-precio">
+           $ ${producto.precio}
         </div>
         <div id="${producto.codigo}cantidadDisponible">
         </div>
