@@ -420,7 +420,6 @@ function agregarAlCarrito(id) {
         actualizarCarrito();
       }
     });
-    //contadorCarrito.innerHTML=carritoDeCompras.filter(articulo => articulo).length++;
   }else{
     //Agregar producto al carrito
     let productoAgregar = productos.filter(elemento => elemento.codigo == id)[0];
