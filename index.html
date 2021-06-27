@@ -119,36 +119,39 @@
 
     </div>
 
-
-    <form action="mailto:wandasscarpato@gmail.com" method="post">
-        <label class="form-titulo" for="consulta">¡Dejanos tu mensaje!</label>
+    <form method="get">
+        <label class="form-titulo" for="consulta">¡Dejanos tu mensaje!
+            <button id="botoncito"><i class="fas fa-info-circle"></i></button></label>
         <div class="grid-form">
             <div>
                 <div>
                     <label class="form-label" for="nombre">Nombre</label> <br>
-                    <input class="form-input" type="text" required>
+                    <input class="form-input" id="nombre" type="text" required>
                 </div>
                 <div>
                     <label class="form-label" for="apellido">Apellido</label> <br>
-                    <input class="form-input" type="text" required>
+                    <input class="form-input" id="apellido" type="text" required>
                 </div>
                 <div>
                     <label class="form-label" for="email">email</label> <br>
-                    <input class="form-input" type="text" required>
+                    <input class="form-input" id="mail" type="text" required>
                 </div>
                 <div>
                     <label class="form-label" for="telefono">telefono</label> <br>
-                    <input class="form-input" type="number" required>
+                    <input class="form-input" id="telefono" type="number" required>
                 </div>
 
             </div>
             <div>
                 <label class="form-label" for="msj">Ingrese su consulta</label> <br>
-                <textarea class="form-input" name="msj" id="" cols="30" rows="10" required></textarea>
+                <textarea class="form-input" id="mensaje" name="msj" id="" cols="30" rows="10" required></textarea>
             </div>
         </div>
         <button class="enviarConsulta">ENVIAR</button>
     </form>
+    <div id="response">
+
+    </div>
     <footer>
         <div class="footer-grid">
             <div>
@@ -203,37 +206,57 @@
     <script src="./js/main.js"></script>
     <script>
 
-/*Recomendado*/
-let n=productos[0].nombre;
-let i=productos[0].imagen;
-let p=productos[0].precio;
-let llave=false;
+        /*Recomendado*/
+        let n = productos[0].nombre;
+        let i = productos[0].imagen;
+        let p = productos[0].precio;
+        let llave = false;
 
-$(".recomendado").prepend(`<button class="btnRecomendado">Ver producto destacado</button>`);
+        $(".recomendado").prepend(`<button class="btnRecomendado">Ver producto destacado</button>`);
 
-$(".recomendado").append(`
+        $(".recomendado").append(`
 <div class="recomendado-producto">
 <img class="recomendado-producto-img" src="${i}">
 <p>${n} <br> $${p}</p>
 </div>
 `)
-$(".btnRecomendado").fadeOut().delay(500).fadeIn()
-$(".recomendado").animate({margin:"3rem"});
-$(".btnRecomendado").on("click",()=>{
-    $(".recomendado-producto-img").delay(1000).animate({width:'10%'},{duration:1000}).fadeOut().fadeIn().delay(500).animate({width:"100%"},{duration:1000});
-  if(llave){
-  $(".recomendado-producto").fadeOut();
-  $(".recomendado").animate({margin:"3rem"});
-   llave=false}
-  else {
-      $(".recomendado-producto").fadeIn();
-      $(".recomendado").delay(100).animate({margin:"0rem"},{duration:500});
+        $(".btnRecomendado").fadeOut().delay(500).fadeIn()
+        $(".recomendado").animate({ margin: "3rem" });
+        $(".btnRecomendado").on("click", () => {
+            $(".recomendado-producto-img").delay(1000).animate({ width: '10%' }, { duration: 1000 }).fadeOut().fadeIn().delay(500).animate({ width: "100%" }, { duration: 1000 });
+            if (llave) {
+                $(".recomendado-producto").fadeOut();
+                $(".recomendado").animate({ margin: "3rem" });
+                llave = false
+            }
+            else {
+                $(".recomendado-producto").fadeIn();
+                $(".recomendado").delay(100).animate({ margin: "0rem" }, { duration: 500 });
 
-  llave=true}
-})
+                llave = true
+            }
+        })
 
+        function ajax() {
+            const http = new XMLHttpRequest();
+            const url = "./aparte.html";
 
+            http.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    swal({
+                        title: this.responseText,
+                        icono: " advertencia ",
+                    })
+                }
+            }
+            http.open("GET", url);
+            http.send();
+        }
+        document.getElementById("botoncito").addEventListener("click", function () {
+            ajax()
+        })
     </script>
+        <script src="productos.json"></script>
 </body>
 
 </html>

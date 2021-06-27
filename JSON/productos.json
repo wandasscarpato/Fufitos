@@ -1,0 +1,146 @@
+[
+{
+    "nombre": "Cupcakes OREO",
+    "imagen": "./img/dulce/categoria1b.jpg",
+    "tipo": "dulce",
+    "precio": 999,
+    "stock": 9,
+    "codigo": 1
+},
+{
+    "nombre": "Torta mouse de OREO",
+    "imagen": "./img/dulce/categoria2.jpeg",
+    "tipo": "dulce",
+    "precio": 999,
+    "stock": 6,
+    "codigo": 2
+},
+{
+    "nombre": "Cheesecake",
+    "imagen": "./img/dulce/categoria3.jpeg",
+    "tipo": "dulce",
+    "precio": 999,
+    "stock": 4,
+    "codigo": 3
+},
+{
+    "nombre": "Alfajores bomba",
+    "imagen": "./img/dulce/categoria4.jpeg",
+    "tipo": "dulce",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 4
+},
+{
+    "nombre": "Carrot cake",
+    "imagen": "./img/dulce/categoria7.jpeg",
+    "tipo": "dulce",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 5
+},
+{
+    "nombre": "Cupcakes glaseados",
+    "imagen": "./img/dulce/categoria6.jpeg",
+    "tipo": "dulce",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 6
+},
+{
+    "nombre": "Pizza",
+    "imagen": "./img/salado/categoria1.jpeg",
+    "tipo": "salado",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 7
+},
+{
+    "nombre": "Empanadas",
+    "imagen": "./img/salado/categoria2.jpeg",
+    "tipo": "salado",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 8
+},
+{
+    "nombre": "Canapé",
+    "imagen": "./img/salado/categoria3.jpeg",
+    "tipo": "salado",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 9
+},
+{
+    "nombre": "Miga",
+    "imagen": "./img/salado/categoria4.jpeg",
+    "tipo": "salado",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 10
+},
+{
+    "nombre": "Bocaditos",
+    "imagen": "./img/salado/categoria5.jpeg",
+   " tipo": "salado",
+   " precio": 999,
+   " stock": 10,
+   " codigo": 11
+},
+{
+    "nombre": "Medialunas",
+    "imagen": "./img/salado/categoria6.jpeg",
+    "tipo": "salado",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 12
+},
+{
+    "nombre": "Dessert Cups",
+    "imagen": "./img/extras/extra3.jpeg",
+    "tipo": "extra",
+    "stock": 10,
+    "precio": 999,
+    "codigo": 13
+},
+{
+    "nombre": "Dragon Fruit Panna",
+    "imagen": "./img/extras/extra6.jpeg",
+    "tipo": "extra",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 14
+},
+{
+    "nombre": "Meyer Lemon Parfaits",
+    "imagen": "./img/extras/extra5.jpeg",
+    "tipo": "extra",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 15
+},
+{
+    "nombre": "Dessert Shooters",
+    "imagen": "./img/extras/extra4.jpeg",
+    "tipo": "extra",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 16
+},
+{
+    "nombre": "Cheesecake parfaits",
+    "imagen": "./img/extras/extra2.jpeg",
+    "tipo": "extra",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 17
+},
+{
+    "nombre": "cheesecake caramel",
+    "imagen": "./img/extras/extra1.jpeg",
+    "tipo": "extra",
+    "precio": 999,
+    "stock": 10,
+    "codigo": 18
+}
+]
